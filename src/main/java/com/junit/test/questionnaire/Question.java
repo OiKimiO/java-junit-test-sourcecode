@@ -1,4 +1,4 @@
-package com.junit.test.chapter02;
+package com.junit.test.questionnaire;
 
 public abstract class Question {
     private String text;
