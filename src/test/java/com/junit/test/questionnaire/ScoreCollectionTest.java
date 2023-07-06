@@ -1,4 +1,4 @@
-package com.junit.test.chapter01;
+package com.junit.test.questionnaire;
 
 import org.junit.jupiter.api.Test;
 

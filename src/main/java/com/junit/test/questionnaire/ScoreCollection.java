@@ -1,4 +1,4 @@
-package com.junit.test.chapter01;
+package com.junit.test.questionnaire;
 
 import java.util.ArrayList;
 import java.util.List;

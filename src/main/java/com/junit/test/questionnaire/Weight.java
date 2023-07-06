@@ -1,4 +1,4 @@
-package com.junit.test.chapter02;
+package com.junit.test.questionnaire;
 
 public enum Weight {
     MustMatch(Integer.MAX_VALUE),
