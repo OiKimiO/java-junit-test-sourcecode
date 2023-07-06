@@ -1,6 +1,6 @@
 package com.junit.test.questionnaire;
 
 @FunctionalInterface
-public interface Scorable{
+public interface Scoreable {
     int getScore();
 }
