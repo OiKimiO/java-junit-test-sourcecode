@@ -6,15 +6,15 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class ScoreCollection {
-    private List<Scorable> scores = new ArrayList<>();
+    private List<Scoreable> scores = new ArrayList<>();
 
-    public void add(Scorable scorable){
+    public void add(Scoreable scorable){
         scores.add(scorable);
     }
 
     public int arithmeticMean(){
-        Stream<Scorable> stream = scores.stream();
-        IntStream intStream = stream.mapToInt(Scorable::getScore);
+        Stream<Scoreable> stream = scores.stream();
+        IntStream intStream = stream.mapToInt(Scoreable::getScore);
         int total = intStream.sum();
         return total / scores.size();
     }
