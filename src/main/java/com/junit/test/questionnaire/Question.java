@@ -15,22 +15,20 @@ public abstract class Question {
         return text;
     }
 
-    public String getAnswerChoices(int i) {
+    public String getAnswerChoice(int i) {
         return answerChoices[i];
     }
 
-    public boolean match(Answer answer){
+    public boolean match(Answer answer) {
         return false;
     }
 
     abstract public boolean match(int expected, int actual);
 
-    public int indexOf(String matchingAnswerChoice){
-        for (int i = 0; i < answerChoices.length; i++) {
-            if(answerChoices[i].equals(matchingAnswerChoice)){
+    public int indexOf(String matchingAnswerChoice) {
+        for (int i = 0; i < answerChoices.length; i++)
+            if (answerChoices[i].equals(matchingAnswerChoice))
                 return i;
-            }
-        }
         return -1;
     }
 }
