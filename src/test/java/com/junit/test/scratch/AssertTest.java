@@ -89,4 +89,40 @@ public class AssertTest {
     void an으로_시작하는_문자인지_확인해요(){
         assertThat(account.getName(), startsWith("an"));
     }
+
+    @Test
+    void 문자열_equalTo_실패케이스1(){
+        assertThat(new String[]{"a","b","c"}, equalTo(new String[]{"a","b"}));
+    }
+
+    @Test
+    void 문자열_equalTo_실패케이스2(){
+        assertThat(new String[]{"a"}, equalTo(new String[]{"a","ab"}));
+    }
+
+    @Test
+    void 문자열_equalTo_성공케이스1(){
+        assertThat(new String[]{"a","b"}, equalTo(new String[]{"a","b"}));
+    }
+
+    @Test
+    void 문자열_equalTo_성공케이스2(){
+        assertThat(new String[]{"a"}, equalTo(new String[]{"a"}));
+    }
+
+    @Test
+    void 문자열_is_eqaulTo_성공케이스(){
+        assertThat(account.getName(), is(equalTo("an account name")));
+    }
+
+    @Test
+    void 문자열_not_eqaulTo_성공케이스(){
+        assertThat(account.getName(), not(equalTo("잘못된 문자")));
+    }
+
+    @Test
+    void 문자열이_not_null(){
+        assertThat(account.getName(), is(not(nullValue())));
+        assertThat(account.getName(), is(notNullValue()));
+    }
 }
