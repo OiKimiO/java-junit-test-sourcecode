@@ -84,4 +84,9 @@ public class AssertTest {
         account.deposit(50);
         assertThat(account.getBalance() > 잔금초기화, is(true));
     }
+
+    @Test
+    void an으로_시작하는_문자인지_확인해요(){
+        assertThat(account.getName(), startsWith("an"));
+    }
 }
