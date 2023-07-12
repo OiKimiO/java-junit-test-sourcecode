@@ -75,4 +75,11 @@ public class AssertTest {
         account.deposit(50);
         assertTrue(account.hasPositiveBalance());
     }
+
+    @Test
+    void 증가된_잔금을_확인해요(){
+        int 잔금초기화 = account.getBalance();
+        account.deposit(100);
+        assertTrue(account.getBalance() > 잔금초기화);
+    }
 }
