@@ -1,10 +1,14 @@
 package com.junit.test.scratch;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class AssertTest {
     class InsufficientFundsException extends RuntimeException {
@@ -57,5 +61,18 @@ public class AssertTest {
         Iterator<Account> getAccounts(){
             return accounts.iterator();
         }
+    }
+
+    private Account account;
+
+    @BeforeEach
+    public void createAccount(){
+        account = new Account("an account name");
+    }
+
+    @Test
+    void 잔금이_남아있어요(){
+        account.deposit(50);
+        assertTrue(account.hasPositiveBalance());
     }
 }
