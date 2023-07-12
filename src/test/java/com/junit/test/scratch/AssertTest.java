@@ -1,10 +1,18 @@
 package com.junit.test.scratch;
 
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 public class AssertTest {
     class InsufficientFundsException extends RuntimeException {
         public InsufficientFundsException(String message) {
             super(message);
         }
+
+        private static final long serialVersionUID = 1L;
     }
 
     class Account{
@@ -39,5 +47,15 @@ public class AssertTest {
         }
     }
 
+    class Customer{
+        List<Account> accounts = new ArrayList<>();
 
+        void add(Account account){
+            accounts.add(account);
+        }
+
+        Iterator<Account> getAccounts(){
+            return accounts.iterator();
+        }
+    }
 }
