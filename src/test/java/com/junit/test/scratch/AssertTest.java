@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.CoreMatchers.*;
 
 
 public class AssertTest {
@@ -79,7 +81,7 @@ public class AssertTest {
     @Test
     void 증가된_잔금을_확인해요(){
         int 잔금초기화 = account.getBalance();
-        account.deposit(100);
-        assertTrue(account.getBalance() > 잔금초기화);
+        account.deposit(50);
+        assertThat(account.getBalance() > 잔금초기화, is(true));
     }
 }
