@@ -10,7 +10,7 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.hamcrest.CoreMatchers.*;
-
+import static org.hamcrest.number.IsCloseTo.*;
 
 public class AssertTest {
     class InsufficientFundsException extends RuntimeException {
@@ -124,5 +124,15 @@ public class AssertTest {
     void 문자열이_not_null(){
         assertThat(account.getName(), is(not(nullValue())));
         assertThat(account.getName(), is(notNullValue()));
+    }
+
+    @Test
+    void 부동_소수점_비교_성공케이스1(){
+        assertTrue((Math.abs(2.32 * 3) - 6.96) < 0.0005);
+    }
+
+    @Test
+    void 부동_소수점_비교_성공케이스2(){
+        assertThat(2.32 * 3, closeTo(6.96, 0.0005));
     }
 }
