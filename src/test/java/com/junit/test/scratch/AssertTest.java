@@ -135,4 +135,10 @@ public class AssertTest {
     void 부동_소수점_비교_성공케이스2(){
         assertThat(2.32 * 3, closeTo(6.96, 0.0005));
     }
+
+    @Test
+    public void 가치없는_단언_코멘트를_테스트(){
+        account.deposit(50);
+        assertThat("account balance is 100", account.getBalance(),equalTo(50));
+    }
 }
